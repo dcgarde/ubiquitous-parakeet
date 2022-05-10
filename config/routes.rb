@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :teams
   as :user do 
     put '/user/confirmation' => 'confirmations#update', :via => :path, :as => :update_user_confirmation
   end
