@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  as :user do 
+    put '/user/confirmation' => 'confirmations#update', :via => :path, :as => :update_user_confirmation
+  end
+
+  devise_for :users, controllers: {
+    registration: 'registrations',
+    confirmation: 'confirmations'
+  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
