@@ -4,7 +4,7 @@
     <div class="column border-right ph4">
         <div class="level">
             <div class="level-left">
-                <h3 class="subtitle is-5">My Projects<span class="tag is-rounded">0</span></h3>
+                <h3 class="subtitle is-5">My Projects<span class="tag is-rounded"><%= @projects.count %></span></h3>
             </div>
             <div class="level-right">
                 <p class="field">
@@ -15,15 +15,15 @@
             </div>
         </div>
         <hr />
-    <% @projects.each do |p| %>
+    <% @projects.each do |project| %>
         <div class="content border-bottom pb4">
             <p class="title is-4">
-                <%= link_to p.name, p %>
+                <%= link_to project.name, project %>
             </p>
             <p class="subtitle is-6">
-                <%= link_to p.team.name, p.team %>
+                <%= link_to project.team.name, project.team %>
             </p>
-            <p class="f6">Created by: <%= p.user.name %></p>
+            <p class="f6">Created by: <%= project.user.name %></p>
         </div>
     <% end %>
     </div> 
@@ -42,13 +42,13 @@
             </div>
         </div>
         <hr />
-    <% @teams.each do |t|%>
+    <% @teams.each do |team|%>
         <div class="content border-bottom pb4">
             <p class="title is-4">
-                <%= link_to t.name, t %>
+                <%= link_to team.name, t %>
             </p>
             <p class="subtitle is-6"><%= t.user.count%></p>
-            <span class="f6"><%= safe_join(t.users.map { |user| user.name }, ', ')%></p>
+            <span class="f6"><%= safe_join(team.users.map { |user| user.name }, ', ')%></p>
         </div>
     <% end %>
     </div> 
