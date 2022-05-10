@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-    registration: 'registrations',
-    confirmation: 'confirmations'
+    registrations: 'registrations',
+    confirmations: 'confirmations'
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
